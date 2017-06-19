@@ -1,9 +1,8 @@
 //
-//  NSArray+Safe.m
+//  NSArray+HigherOrderFunctions.m
 //  Beequick
 //
 //  Created by fanpyi on 20/3/15.
-//  Copyright (c) 2015 www.beequick.cn. All rights reserved.
 //
 
 #import "NSArray+HigherOrderFunctions.h"
