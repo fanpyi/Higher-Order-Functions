@@ -1,0 +1,6 @@
+[{"number":"100366","name":"Alice","age":14,"score":80,"gender":"female"},
+  {"number":"100368","name":"Scarlett","age":15,"score":90,"gender":"female"},
+ {"number":"100370","name":"Morgan","age":16,"score":69.5,"gender":"male"},
+  {"number":"100359","name":"Taylor","age":14,"score":86,"gender":"female"},
+ {"number":"100381","name":"John","age":17,"score":72,"gender":"male"}
+]
