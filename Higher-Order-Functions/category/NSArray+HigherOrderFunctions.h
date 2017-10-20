@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef id (^ReduceBlock)(id accumulator,id item);
+
 @interface NSArray<T> (HigherOrderFunctions)
 
 -(NSArray *)map:(id (^)(T obj))block;
