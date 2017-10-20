@@ -49,30 +49,27 @@
     
     NSArray *studentJSONList = [self stdJSONList];
     //studentJSONList map to NSArray<Student *>
-    NSArray *students = [studentJSONList map:^id(id obj) {
+    NSArray <Student *>*students = [studentJSONList map:^id(id obj) {
         return [[Student alloc]initWithDictionary:obj];
     }];
     NSLog(@"students:%@",students);
 
     // use reduce to get average score
-    NSNumber *sum = [students reduce:@0 combine:^id(id accumulator, id item) {
-        Student *std = (Student *)item;
-        return @([accumulator floatValue] + std.score);
+    NSNumber *sum = [students reduce:@0 combine:^id(id accumulator, Student *item) {
+        return @([accumulator floatValue] + item.score);
     }];
     float averageScore = sum.floatValue/students.count;
     NSLog(@"averageScore: %f",averageScore);
     
     // use filter to find all student of score greater than 70
-    NSArray *greaterthan = [students filter:^BOOL(id obj) {
-        Student *std = (Student *)obj;
-        return std.score > 70;
+    NSArray <Student *> *greaterthan = [students filter:^BOOL(Student *obj) {
+        return obj.score > 70;
     }];
     NSLog(@"score greater than 70: %@",greaterthan);
     
     //use contains check students whether contain the student named 'Alice'
-    BOOL contains = [students contains:^BOOL(id obj) {
-        Student *std = (Student *)obj;
-        return [std.name isEqual:@"Alice"];
+    BOOL contains = [students contains:^BOOL(Student *obj) {
+        return [obj.name isEqual:@"Alice"];
     }];
     NSLog(@"contains:%d",contains);
 }

@@ -7,14 +7,14 @@
 
 #import <Foundation/Foundation.h>
 typedef id (^ReduceBlock)(id accumulator,id item);
-@interface NSArray (HigherOrderFunctions)
+@interface NSArray<T> (HigherOrderFunctions)
 
--(NSArray *)map:(id (^)(id obj))block;
+-(NSArray *)map:(id (^)(T obj))block;
 
--(id)reduce:(id)initial combine:(ReduceBlock)combine;
+-(id)reduce:(id)initial combine:(id (^)(id accumulator,T item))combine;
 
--(NSArray *)filter:(BOOL (^)(id obj))block;
+-(NSArray *)filter:(BOOL (^)(T obj))block;
 
--(BOOL)contains:(BOOL(^)(id obj))block;
+-(BOOL)contains:(BOOL(^)(T obj))block;
 
 @end

@@ -19,7 +19,7 @@
     }
     return t;
 }
--(id)reduce:(id)initial combine:(ReduceBlock)combine{
+-(id)reduce:(id)initial combine:(id (^)(id, id))combine{
     id accumulator = initial;
     for (id item in self) {
         accumulator = combine(accumulator, item);
