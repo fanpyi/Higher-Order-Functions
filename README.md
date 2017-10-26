@@ -17,7 +17,6 @@ there is a JSON array studentJSONList like this:
     {"number":"100381","name":"John","age":17,"score":72,"gender":"male"}
 ]
 
-``` objc
 NSArray *studentJSONList = [self stdJSONList];
 
 //studentJSONList map to NSArray<Student *>
